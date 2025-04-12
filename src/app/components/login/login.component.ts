@@ -14,7 +14,7 @@ export class LoginComponent {
   constructor(private router: Router){}
 
   OnSubmit(){
-    this.router.navigate(['Home']);
+    this.router.navigate(['Dashboard']);
   }
 
 }
