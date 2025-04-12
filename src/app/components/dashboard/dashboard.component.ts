@@ -1,6 +1,6 @@
-import { Component, NgModule } from '@angular/core';
+import { Component, Input, NgModule } from '@angular/core';
 import { NgForm } from '@angular/forms';
-
+import { UnicornApiService } from '../../services/unicorn-api.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -21,5 +21,16 @@ export class DashboardComponent {
   SetTab(tabid:string){
     this.activeTab = tabid;
   }
+
+  stockDetails:any;
+    constructor(private apiService : UnicornApiService){}
+    ngOnInit() {
+      this.apiService.GetStockResults().subscribe(data =>{
+        if(data){
+          console.log(data);
+          this.stockDetails = data;
+        }
+      });
+    }
 
 }
