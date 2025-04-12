@@ -7,7 +7,7 @@ import { WatchlistComponent } from './components/watchlist/watchlist.component';
 
 export const routes: Routes = [
     { path: "Home" , component : HomeComponent },
-    { path: "Login", component : LoginComponent },
+    { path: "", component : LoginComponent , pathMatch: 'full'},
     { path: "Portfolio", component : PortfolioComponent },
     { path: "WatchList", component: WatchlistComponent},
     { path: "Dashboard", component: DashboardComponent }
